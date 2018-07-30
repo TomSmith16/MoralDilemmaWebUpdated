@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<meta charset="utf-8">
+
+	<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jspsych-5.0.3/jspsych.js"></script> <!--jspsych used for randomization and other potential uses-->
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Comfortaa">
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body onload="TutLoad()">
+
+	<main id="main">
+		<!--intro-->
+		<h2 id="object">Character Moral Dilemmas </h2>
+		
+		<p id="intro"> Throughout this survey you will be shown a selection of moral dilemmas from both real world and video game scenarios, you must click on one of the two outcomes provided.
+		<br> Please make a decision based on what <b>your character</b> in a video game would do. 
+		<br>Your results will not be stored until you submit your participant information after the survey is complete.
+		<br>Hovering over the image will show the result of the outcome.<br>
+		<br> Below is an example and will not be recorded, please select one and click confirm when you are satisfied with your choice. 
+		</p>
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		
+		<p id="dilemmainfo"><b> Situation: </b></p>
+		<!--dilemmas-->
+		
+		<div id="choices">
+			<div id="tutleft" onclick = "tutclassChangea()">
+				<p id="demoA" > Option A </p>
+					<div id="tutdilemmal">
+						<img src="trolleytest.png" id="tutoptiona" name="optiona" class="hover" />
+						<img src="stickman.png" id="tutplayera" name="playera" class="hover"/>
+						<img src="stickwoman.png" id="resulta"	name="resulta" class="hover"/>
+						<img src="stickwoman.png" id="resulta1"	name="resulta" class="hover"/>
+						<img src="stickwoman.png" id="resulta2"	name="resulta" class="hover"/>
+						<img src="death.png" id="deatha" name="death" class="hover"/>
+					</div>
+					<div id="results" class="hover">
+						<p class="ltext">Dead:</p>
+						<ul>
+							<li> Man </li>
+						</ul>
+						
+					</div>
+			</div>
+			
+			<div id="tutright"  onclick = "tutclassChangeb()">
+				<p id="demoB" > Option B </p>
+					<div id="tutdilemmar">
+						<img src="trolleytest.png" id="tutoptionb" name="optionb" class="hover" />
+						<img src="stickman.png" id="tutplayerb" name="playerb" class="hover"/>
+						<img src="stickwoman.png" id="resultb"	name="resultb" class="hover"/>
+						<img src="stickwoman.png" id="resultb1"	name="resultb" class="hover"/>
+						<img src="stickwoman.png" id="resultb2"	name="resultb" class="hover"/>
+						<img src="death.png" id="deathb" name="death" class="hover"/>
+						<img src="death.png" id="deathbt1" name="death" class="hover"/>
+						<img src="death.png" id="deathbt2" name="death" class="hover"/>
+					</div>
+					<div id="results" class="hover">
+						<p class="rtext">Dead:</p>
+						<ul>
+							<li> Woman </li>
+							<li> Woman </li>
+							<li> Woman </li>
+						</ul>
+						
+					</div>
+			</div>
+		</div>
+		
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		<!--bottom half-->
+		<p id="info"> </p>
+			<button id="tutconfirm" class="tutconfirm" type="button">Confirm</button>		
+		<p id="tuterror"> Please select an option! </p>
+	</main>
+	
+	<main id="loading">
+		<p id="loadtext"> Loading</p>
+	</main>
+	
+	
+	<main id="survey">
+	<!--intro-->
+		<h2> Character Moral Dilemmas </h2>
+		<p id="intro"> Please select one of the two options below. 
+		<br>Make a decision based on what <b>your character</b> in a video game would do.
+		<br>Hovering over the image will show the result of the choice. 
+		<br> <img src ="friend.png" alt="Smiley" align="bottom"> = Friend,
+		<br> <img src ="stranger.png" alt="Question Mark" align="bottom"> = Stranger,
+		<br> <img src ="NPC.png" alt="Non-player controlled character" align="bottom"> = Non-player controlled character,
+		</p>
+		<p id="random"> </p>
+		<p id="random2"> </p>
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		
+		<p id="dilemmainfo1"><b>Situation: </b></p>
+		<!--dilemmas-->
+		
+		<div id="choices">
+			<div id="left" onclick = "classChangea()">
+				<p id="demoA" > Option A </p>
+					<div id="dilemmal">
+						<img src="test.png" id="a" name="a" class="hover" />
+						<!--<img src="player.png" id="chara1" name="saveda" class="hover"/>
+						<img src="player.png" id="chara2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deatha" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="ltext" class="ltext">Dead: </p>
+						<ul id="llist" class="llist"> 
+							
+						</ul>
+					</div>
+			</div>
+			
+			
+			
+			<div id="right" onclick = "classChangeb()">
+				<p id="demoB" > Option B </p>
+					<div id="dilemmar">
+						<img src="test.png" id="b" name="b" class="hover" />
+						<!--<img src="player.png" id="charb1" name="savedb" class="hover"/>
+						<img src="player.png" id="charb2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deathb" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="rtext" class="rtext">Dead: </p>
+						<ul id="rlist" class="rlist"> 
+							
+						</ul>
+					</div>
+					</div>
+			</div>
+		</div>
+		
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		<!--bottom half-->
+		<p id="info"> </p>
+		<button id="confirm" class="confirm" type="button">Confirm</button>		
+		<p id="error"> Please select an option! </p>
+	</main>
+	
+	<main id="participants">
+		<h2> Thanks for participating! </h2>
+		
+		<p> Please enter your details below. <br> You may leave a field blank if you do not wish to answer, 
+		click the complete button when you are finished and your survey answers shall be submitted. 
+		<br> Be aware once you have submitted, you will not be able to withdraw your answers.</p>
+		<p id="identifier"> Unique Identifier: </p>
+		<form id="form">
+			<h3> Details </h3>
+			<!--Unique Identifier, show to them-->
+				
+				<input type="number" id="age" class="formfield" placeholder="Age" min="16" max="118">
+				<select id="gender" class="formfield" placeholder="Select one"> 
+					<option value="Male"> Male </option>
+					<option value="Female"> Female </option>
+					<option value="Other"> Other </option>
+					<option value="Decline"> I prefer not to say </option>
+				</select>
+				<br>				
+				
+				<p> Select your three most played video game genres: </p>
+				
+				<input type="checkbox" name="shooter" class="game" value="Shooters"> Shooter 
+				<input type="checkbox" name="moba" class="game" value="MOBA" > Multiplayer Online Battle Arenas<br>
+				<input type="checkbox" name="rpg" class="game" value="RPG"> Role-playing games 
+				<input type="checkbox" name="strategy" class="game" value="Strategy"> Strategy <br>
+				<input type="checkbox" name="fighting" class="game" value="Fighting"> Fighting 
+				<input type="checkbox" name="sports" class="game" value="Sports"> Sports <br>
+				<input type="checkbox" name="racing" class="game" value="Racing"> Racing 
+				<input type="checkbox" name="tcg" class="game" value="TCG"> Trading Card Games <br>
+				<input type="checkbox" name="survival" class="game" value="survival"> Survival 
+				<input type="checkbox" name="puzzle" class="game" value="Puzzle"> Puzzle <br>
+				
+				<input type="text" id="otherbox" class="formfield" placeholder="Other">
+				
+		</form>
+		
+		
+		<button id="complete" type="button">Complete Survey!</button>
+		
+	
+	</main>
+	
+	<script src="CharacterFunctions.js"></script>
+	<script src="firebase.js"> </script>
+	<script src="client.min.js"> </script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</body>
+
+</html>

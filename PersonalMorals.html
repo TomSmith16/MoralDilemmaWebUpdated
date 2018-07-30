@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<title> Ethical Behaviour Research </title>
+	<meta charset="utf-8">
+	<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jspsych-5.0.3/jspsych.js"></script> <!--jspsych used for randomization and other potential uses-->
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Comfortaa">
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body onload="TutLoad()">
+
+	<main id="home">
+	
+		<div id="homestart">
+		<h1> Real world Moral Behaviour </h1>
+			<p>Thank you for taking part in this survey about ethical behaviour! This survey will ask you questions around your moral behaviours in both the real world and video game scenarios.<br>
+			<br>Your results will not be stored until you have completed the entire survey.  
+			The entire survey should take around 10-20 minutes.<br></p>
+		</div>
+			<p id="surbut"><button id="startsurvey"> Start survey! </button></p>
+		
+	</main>
+
+	<main id="mfq">
+		<h1> Real World Moral Foundations </h1>
+		
+		<div id="mfqrelevance" ng-app="app" ng-controller="controller">
+		<h2>When you decide whether something is right or wrong in the <b>real world</b>, to what extent are the following considerations relevant to your thinking?</h2>
+	<form id="form">
+    <label class="statement">Whether or not someone suffered emotionally.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert1" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert1" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert1" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert1" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert1" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not some people were treated differently than others.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert2" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert2" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert2" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert2" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert2" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not someone’s action showed love for his or her country.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert3" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert3" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert3" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert3" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert3" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not someone showed a lack of respect for authority.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert4" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert4" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert4" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert4" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert4" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone violated standards of purity and decency.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert5" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert5" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert5" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert5" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert5" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was good at math.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert6" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert6" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert6" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert6" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert6" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone cared for someone weak or vulnerable.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert7" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert7" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert7" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert7" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert7" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone acted unfairly.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert8" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert8" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert8" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert8" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert8" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone did something to betray his or her group.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert9" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert9" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert9" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert9" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert9" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone conformed to the traditions of society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert10" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert10" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert10" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert10" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert10" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone did something disgusting.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert11" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert11" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert11" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert11" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert11" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was cruel.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert12" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert12" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert12" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert12" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert12" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was denied his or her rights.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert13" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert13" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert13" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert13" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert13" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone showed a lack of loyalty.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert14" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert14" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert14" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert14" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert14" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not an action caused chaos or disorder.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert15" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert15" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert15" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert15" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert15" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone acted in a way that God would approve of.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert16" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert16" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert16" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert16" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert16" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	
+  </form>
+  <button id="mfqnext" type="button"> Next section </button>
+  </div>
+	
+		
+	<div id="mfqagreement">
+		<h2>Please read the following sentences and indicate your agreement or disagreement: </h2>
+	<form id="form">
+    <label class="statement">Compassion for those who are suffering is the most crucial virtue.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert17" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert17" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert17" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert17" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert17" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">When the government makes laws, the number one principle should be ensuring that everyone is treated fairly.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert18" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert18" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert18" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert18" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert18" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">I am proud of my country’s history.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert19" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert19" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert19" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert19" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert19" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">Respect for authority is something all children need to learn.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert20" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert20" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert20" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert20" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert20" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">People should not do things that are disgusting, even if no one is harmed.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert21" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert21" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert21" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert21" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert21" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It is better to do good than to do bad.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert22" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert22" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert22" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert22" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert22" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">One of the worst things a person could do is hurt a defenseless animal.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert23" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert23" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert23" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert23" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert23" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Justice is the most important requirement for a society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert24" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert24" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert24" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert24" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert24" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">People should be loyal to their family members, even when they have done something wrong.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert25" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert25" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert25" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert25" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert25" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Men and women each have different roles to play in society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert26" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert26" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert26" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert26" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert26" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">I would call some acts wrong on the grounds that they are unnatural.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert27" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert27" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert27" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert27" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert27" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It can never be right to kill a human being.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert28" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert28" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert28" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert28" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert28" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">I think it’s morally wrong that rich children inherit a lot of money while poor children inherit nothing.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert29" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert29" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert29" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert29" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert29" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It is more important to be a team player than to express oneself.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert30" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert30" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert30" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert30" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert30" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">If I were a soldier and disagreed with my commanding officer’s orders, I would obey anyway because that is my duty.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert31" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert31" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert31" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert31" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert31" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Chastity is an important and valuable virtue.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radios" name="likert32" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert32" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert32" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert32" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radios" name="likert32" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+  </form>
+
+				<button id="mfqprevious" type="button"> Previous section </button> 
+			</p>
+			<button id="mfqconfirm" type="button"> Confirm </button>
+		</div>
+		
+		<!--Reference-->
+
+	</main>
+	
+	
+	
+	<main id="main">
+		<!--intro-->
+		<h1>Personal Moral Dilemmas </h1>
+		
+		<p id="intro"> Throughout this survey you will be shown a selection of moral dilemmas from both real world and video game scenarios, you must click on one of the two outcomes provided. A green background indicates a generic video game scenario, whereas a blue background indicates a hypothetical real world scenario.
+		<br><br>An example will be shown once you press the "Show Example" button, then the survey will begin. </p>
+		
+		<p id="keyexam"> <button id="showexample"> Show Example </button> </p>
+		<div id="example">
+			<p style="text-align: center; font-size:18px;"> Please read each scenario <b>carefully</b> and select your choice.<br><br>
+			Please make a decision based on what <b>you</b> personally would do. <br> </p>
+
+			<!--separator-->
+			<div id="separator">
+				<hr class="style1">
+			</div>
+			
+			<p id="dilemmainfo"><b> Situation: </b></p>
+			<!--dilemmas-->
+			
+			<div id="choices">
+				<div id="tutleft" onclick = "tutclassChangea()">
+					<p id="demoA" > Option A </p>
+						<div id="tutdilemmal">
+							<img src="trolleytest.png" id="tutoptiona" name="optiona" class="hover" />
+							<img src="stickman.png" id="tutplayera" name="playera" class="hover"/>
+							<img src="stickwoman.png" id="resulta"	name="resulta" class="hover"/>
+							<img src="stickwoman.png" id="resulta1"	name="resulta" class="hover"/>
+							<img src="stickwoman.png" id="resulta2"	name="resulta" class="hover"/>
+							<img src="death.png" id="deatha" name="death" class="hover"/>
+						</div>
+						<div id="results" class="hover">
+							<p class="ltext">Result:</p>
+							<ul>
+								<li> Man  = Dead</li>
+							</ul>
+							
+						</div>
+				</div>
+				
+				<div id="tutright"  onclick = "tutclassChangeb()">
+					<p id="demoB" > Option B </p>
+						<div id="tutdilemmar">
+							<img src="trolleytest.png" id="tutoptionb" name="optionb" class="hover" />
+							<img src="stickman.png" id="tutplayerb" name="playerb" class="hover"/>
+							<img src="stickwoman.png" id="resultb"	name="resultb" class="hover"/>
+							<img src="stickwoman.png" id="resultb1"	name="resultb" class="hover"/>
+							<img src="stickwoman.png" id="resultb2"	name="resultb" class="hover"/>
+							<img src="death.png" id="deathb" name="death" class="hover"/>
+							<img src="death.png" id="deathbt1" name="death" class="hover"/>
+							<img src="death.png" id="deathbt2" name="death" class="hover"/>
+						</div>
+						<div id="results" class="hover">
+							<p class="rtext">Result:</p>
+							<ul>
+								<li> Woman = Dead</li>
+								<li> Woman = Dead</li>
+								<li> Woman = Dead</li>
+							</ul>
+							
+						</div>
+				</div>
+			</div>
+			
+			<!--separator-->
+			<div id="separator">
+				<hr class="style1">
+			</div>
+			<!--bottom half-->
+			<p id="info"> </p>
+				<button id="tutconfirm" class="tutconfirm" type="button">Confirm</button>		
+			<p id="tuterror"> Please select an option! </p>
+		</div>
+	</main>
+	
+	<main id="loading">
+		<p id="loadtext"> Loading</p>
+	</main>
+	
+	
+	<main id="survey">
+	<!--intro-->
+		<h1 id="object">Personal Moral Dilemmas </h1>
+
+		<div id="keybifftext">
+			
+			<div id="keydiv">
+				<b>Key:</b>
+				<br> <img src ="friend.png" alt="Smiley" align="bottom"> = Friend
+				<br> <img src ="NPC.png" alt="NPC" align="bottom"> = Non-player controlled character
+				<br> <img src ="stranger.png" alt="stranger" align="bottom"> = Stranger
+			</div>
+			
+			<div id="chartextdiv">
+				<p id="chartext"> Read each scenario <b>carefully</b> and select your choice.<br><br>
+				Please make a decision based on what <b>you</b> personally would do. <br></p>
+			</div>
+			
+			<div id="biff">
+				<img src="player.png" alt="redplayer" style="width: 30px; height: 74px;"> 
+				<p>This is you!</p>
+			</div>
+		</div>
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		
+		<p id="dilemmainfo1"><b>Situation: </b></p>
+		<!--dilemmas-->
+		
+		<div id="choices">
+			<div id="left" onclick = "classChangea()">
+				<p id="demoA" > Option A </p>
+					<div id="dilemmal">
+						<img src="test.png" id="a" name="a" class="hover" />
+						<!--<img src="player.png" id="chara1" name="saveda" class="hover"/>
+						<img src="player.png" id="chara2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deatha" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="ltext" class="ltext">Result: </p>
+						<ul id="llist" class="llist"> 
+							
+						</ul>
+					</div>
+			</div>
+			
+			
+			
+			<div id="right" onclick = "classChangeb()">
+				<p id="demoB" > Option B </p>
+					<div id="dilemmar">
+						<img src="test.png" id="b" name="b" class="hover" />
+						<!--<img src="player.png" id="charb1" name="savedb" class="hover"/>
+						<img src="player.png" id="charb2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deathb" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="rtext" class="rtext">Result: </p>
+						<ul id="rlist" class="rlist"> 
+							
+						</ul>
+					</div>
+					</div>
+			</div>
+		</div>
+		
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		<!--bottom half-->
+		<p id="info"> </p>
+		<button id="confirm" class="confirm" type="button">Confirm</button>		
+		<p id="error"> Please select an option! </p>
+	</main>
+	
+	<main id="participants">
+		<h2> Information </h2>
+		
+		<p style="font-size:20px;"> Please enter your details below. <br> You may leave a field blank if you do not wish to answer, 
+		click the "Begin Survey" to start the survey.
+		<br> Be aware once you have submitted at the end of the survey, you will not be able to withdraw your answers.</p>
+		<p id="identifier" style="font-size:20px;"> Unique Identifier: </p>
+		<form id="formp">
+			
+			<!--Unique Identifier, show to them-->
+			
+						
+			<div id="formleft">
+			<h3> Details </h3>
+				<input type="number" id="age" class="formfield" placeholder="Age" min="16" max="118">
+				<select id="gender" class="formfield" placeholder="Select one"> 
+					<option value="Male"> Male </option>
+					<option value="Female"> Female </option>
+					<option value="Other"> Other </option>
+					<option value="Decline"> I prefer not to say </option>
+				</select>
+				<br>		
+				
+				<p style="font-size:18px;"> Select up to your three most played multiplayer video game genres: </p>
+				
+				<input type="checkbox" name="shooter" class="game" value="Shooters"> Shooter <br>
+				<input type="checkbox" name="moba" class="game" value="MOBA" > Multiplayer Online Battle Arenas <br>
+				<input type="checkbox" name="rpg" class="game" value="RPG"> Role-playing games <br>
+				<input type="checkbox" name="strategy" class="game" value="Strategy"> Strategy <br>
+				<input type="checkbox" name="fighting" class="game" value="Fighting"> Fighting <br>
+				<input type="checkbox" name="sports" class="game" value="Sports"> Sports <br>
+				<input type="checkbox" name="racing" class="game" value="Racing"> Racing <br>
+				<input type="checkbox" name="tcg" class="game" value="TCG"> Trading Card Games <br>
+				<input type="checkbox" name="survival" class="game" value="Survival"> Survival <br>
+				<input type="checkbox" name="puzzle" class="game" value="Puzzle"> Puzzle <br>
+				
+				<input type="text" id="otherbox" class="formfield" placeholder="Other">
+				<!--<button id="showmfq" class="button" type="button" style="margin-left: 50%" >Show Moral Foundations Results </button>
+					<div id="mfqgameresults">
+					<h4>Video Game Moral Foundations Results </h4>
+					<p style="font-size:12px"> <input id="gameharmcare" style="width: 2em" readonly>  Harm/Care <i>(20.2)</i> </p>
+					<p style="font-size:12px"> <input id="gamefairrecip" style="width: 2em" readonly> Fairness/Reciprocity <i>(20.5)</i> </p>
+					<p style="font-size:12px"> <input id="gamegrouployal" style="width: 2em" readonly>   In-group/Loyalty  <i>(16.0)</i></p>
+					<p style="font-size:12px"> <input id="gameauthrespect" style="width: 2em" readonly>  Authority/Respect <i>(16.5)</i></p>
+					<p style="font-size:12px"> <input id="gamepuresanc" style="width: 2em" readonly>  Purity/Sanctity  <i>(12.6)</i> </p>
+					<p style="font-size:12px"><i>*average</i>
+				</div>-->	
+			</div>
+			
+			<div id="formright">
+				<p style="font-size:18px;">If applicable, what "roles" do you assume most in multiplayer video games? (Hover the textbox for examples)</p>
+			
+				<p class="tooltiptext">e.g: <br>RPG/MOBA = Tank, DPS, Support <br> TCG = Aggressive, Control, Combo <br> Shooter = Offensive, Defensive, Support</p>
+				<input type="text" id="rolebox" class="formfield" placeholder="Roles">
+				
+				<!--<div id="mfqresults">
+					<h4>Real World Moral Foundations Results </h4>
+					<p style="font-size:12px"> <input id="harmcare" style="width: 2em" readonly>  Harm/Care <i>(20.2)</i> </p>
+					<p style="font-size:12px"> <input id="fairrecip" style="width: 2em" readonly> Fairness/Reciprocity <i>(20.5)</i> </p>
+					<p style="font-size:12px"> <input id="grouployal" style="width: 2em" readonly>   In-group/Loyalty  <i>(16.0)</i></p>
+					<p style="font-size:12px"> <input id="authrespect" style="width: 2em" readonly>  Authority/Respect <i>(16.5)</i></p>
+					<p style="font-size:12px"> <input id="puresanc" style="width: 2em" readonly>  Purity/Sanctity  <i>(12.6)</i> </p>
+					<p style="font-size:12px"><i>*average</i>
+				</div>-->
+			</div>
+			<br>
+		
+		</form>
+
+		<button id="begin" type="button">Begin survey!</button>
+
+	</main>
+	
+	
+	<main id ="thanks">
+		<h2> Thanks for participating! </h2>
+		
+		<p id ="thankstext">You may now close the survey, your results have been submitted.</p>
+	</main>
+	
+	
+	
+	
+	<main id="mfqgames">
+		<div id="controller"><img id="ps4img" src="controller.png"><h1 id="vgmfqtitle"> Video Game Moral Foundations </h1></div>
+		
+		<div id="mfqgamesrelevance" >
+		<h2>When you decide whether something is right or wrong in <b>video games</b>, to what extent are the following considerations relevant to your thinking?</h2>
+	<form id="form">
+    <label class="statement">Whether or not someone suffered emotionally.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert1" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert1" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert1" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert1" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert1" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not some people were treated differently than others.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert2" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert2" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert2" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert2" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert2" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not someone’s action showed love for his or her country.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert3" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert3" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert3" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert3" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert3" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+    <label class="statement">Whether or not someone showed a lack of respect for authority.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert4" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert4" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert4" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert4" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert4" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone violated standards of purity and decency.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert5" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert5" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert5" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert5" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert5" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was good at math.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert6" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert6" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert6" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert6" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert6" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone cared for someone weak or vulnerable.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert7" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert7" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert7" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert7" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert7" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone acted unfairly.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert8" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert8" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert8" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert8" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert8" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone did something to betray his or her group.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert9" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert9" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert9" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert9" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert9" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone conformed to the traditions of society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert10" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert10" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert10" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert10" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert10" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone did something disgusting.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert11" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert11" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert11" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert11" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert11" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was cruel.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert12" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert12" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert12" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert12" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert12" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone was denied his or her rights.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert13" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert13" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert13" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert13" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert13" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone showed a lack of loyalty.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert14" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert14" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert14" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert14" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert14" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not an action caused chaos or disorder.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert15" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert15" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert15" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert15" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert15" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	<label class="statement">Whether or not someone acted in a way that God would approve of.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert16" value="1">
+        <label>Not at all relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert16" value="2">
+        <label>Not very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert16" value="3">
+        <label>Slightly relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert16" value="4">
+        <label>Very relevant</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert16" value="5">
+        <label>Extremely relevant</label>
+      </li>
+    </ul>
+	
+  </form>
+  
+  <button id="mfqgamesnext" type="button"> Next section </button>
+  </div>
+			
+			
+		
+		
+		
+	<div id="mfqgamesagreement">
+		<h2>Please read the following sentences and indicate your agreement or disagreement: </h2>
+	<form id="form">
+    <label class="statement">Compassion for those who are suffering is the most crucial virtue.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert17" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert17" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert17" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert17" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert17" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">When the government makes laws, the number one principle should be ensuring that everyone is treated fairly.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert18" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert18" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert18" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert18" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert18" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">I am proud of my country’s history.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert19" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert19" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert19" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert19" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert19" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+    <label class="statement">Respect for authority is something all children need to learn.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert20" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert20" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert20" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert20" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert20" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">People should not do things that are disgusting, even if no one is harmed.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert21" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert21" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert21" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert21" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert21" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It is better to do good than to do bad.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert22" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert22" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert22" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert22" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert22" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">One of the worst things a person could do is hurt a defenseless animal.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert23" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert23" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert23" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert23" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert23" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Justice is the most important requirement for a society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert24" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert24" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert24" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert24" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert24" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">People should be loyal to their family members, even when they have done something wrong.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert25" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert25" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert25" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert25" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert25" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Men and women each have different roles to play in society.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert26" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert26" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert26" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert26" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert26" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">I would call some acts wrong on the grounds that they are unnatural.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert27" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert27" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert27" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert27" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert27" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It can never be right to kill a human being.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert28" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert28" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert28" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert28" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert28" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">I think it’s morally wrong that rich children inherit a lot of money while poor children inherit nothing.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert29" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert29" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert29" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert29" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert29" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">It is more important to be a team player than to express oneself.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert30" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert30" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert30" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert30" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert30" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">If I were a soldier and disagreed with my commanding officer’s orders, I would obey anyway because that is my duty.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert31" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert31" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert31" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert31" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert31" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+	<label class="statement">Chastity is an important and valuable virtue.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" class="radiosg" name="likert32" value="1">
+        <label>Strongly disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert32" value="2">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert32" value="3">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert32" value="4">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" class="radiosg" name="likert32" value="5">
+        <label>Strongly agree</label>
+      </li>
+    </ul>
+  </form>
+		
+				<button id="mfqgamesprevious" type="button"> Previous section </button> 
+			</p>
+			<button id="mfqgamesconfirm" type="button"> Confirm </button>
+		</div>
+		
+		<!--Reference-->
+
+	</main>
+	
+	<script src="PersonalFunctions.js"></script>
+	<script src="firebase.js"> </script>
+	<script src="client.min.js"> </script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="bgpersonal.css">
+</body>
+
+</html>
